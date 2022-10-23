@@ -21,5 +21,15 @@ pipeline {
                 }
             }
         }
+
+        stage ('Deploy Kubernetes') {
+
+            steps {
+                withKubecofig(credentialsId: 'kubeconfig') {
+                    sh 'kubectl apply -d deploy.yml'
+                }
+            }
+
+        }
     }
 }
