@@ -18,5 +18,6 @@ pipeline {
                         dockerapp.push("${env.BUILD_ID}")
                 }
             }
-            
         }
+    }
+}
