@@ -14,7 +14,7 @@ pipeline {
         stage ('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://hub.docker.com/repository/docker/abcs89/kube-news', 'dockerhub') 
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') 
                         dockerapp.push('latest')
                         dockerapp.push("${env.BUILD_ID}")
                 }
